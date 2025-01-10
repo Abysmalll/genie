@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ssti_challenge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flag.txt:/flag.txt:ro
+    restart: unless-stopped
