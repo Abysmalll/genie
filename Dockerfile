@@ -18,8 +18,11 @@ WORKDIR /app
 # Install Flask and any other dependencies
 RUN pip install --no-cache-dir flask
 
-# Expose port 5020 as used in your docker-compose.yml
+# Expose port 80 as used in your docker-compose.yml
 EXPOSE 80
+
+# Set FLASK_APP environment variable to point to the app.py
+ENV FLASK_APP=/app/app/app.py
 
 # Change working directory to app
 WORKDIR /app/app
