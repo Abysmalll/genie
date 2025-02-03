@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     with open('flag.txt', 'r') as f:
-        flag = f.read().strip()
+        flag = f.read()
 
     input = request.args.get('input', '')
     
